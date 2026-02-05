@@ -73,14 +73,14 @@ export default function VoterPage() {
     setIsModalOpen(true);
   };
 
-  if (loading) return <div className="p-12 text-center text-gray-500 text-xl font-semibold">Loading Pemira 2025 Candidates...</div>;
+  if (loading) return <div className="p-12 text-center text-gray-500 text-xl font-semibold">Loading Pemira 2026 Candidates...</div>;
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-[#1e293b]">
       {/* Hero Section */}
       <header className="bg-brand-900 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-extrabold mb-4 tracking-tight">PEMIRA 2025</h1>
+          <h1 className="text-5xl font-extrabold mb-4 tracking-tight">PEMIRA 2026</h1>
           <p className="text-xl text-brand-100 max-w-2xl mx-auto">
             Choose your next leader. Your voice defines the future of our LPM INDEX MEDIA. 
             One vote per NIM.
@@ -185,7 +185,7 @@ export default function VoterPage() {
       )}
 
       <footer className="py-12 border-t border-gray-100 text-center">
-        <p className="text-gray-400 font-medium">© 2025 LPM INDEX MEDIA. All Rights Reserved.</p>
+        <p className="text-gray-400 font-medium">© 2026 LPM INDEX MEDIA. All Rights Reserved.</p>
       </footer>
     </div>
   );
