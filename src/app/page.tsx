@@ -73,45 +73,61 @@ export default function VoterPage() {
     setIsModalOpen(true);
   };
 
-  if (loading) return <div className="p-12 text-center text-gray-500 text-xl font-semibold">Loading Pemira 2024 Candidates...</div>;
+  if (loading) return <div className="p-12 text-center text-gray-500 text-xl font-semibold">Loading Pemira 2025 Candidates...</div>;
 
   return (
     <div className="min-h-screen bg-[#f8fafc] text-[#1e293b]">
       {/* Hero Section */}
-      <header className="bg-indigo-900 text-white py-16 px-4">
+      <header className="bg-brand-900 text-white py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl font-extrabold mb-4 tracking-tight">PEMIRA 2024</h1>
-          <p className="text-xl text-indigo-100 max-w-2xl mx-auto">
-            Choose your next leader. Your voice defines the future of our campus. 
+          <h1 className="text-5xl font-extrabold mb-4 tracking-tight">PEMIRA 2025</h1>
+          <p className="text-xl text-brand-100 max-w-2xl mx-auto">
+            Choose your next leader. Your voice defines the future of our LPM INDEX MEDIA. 
             One vote per NIM.
           </p>
         </div>
       </header>
 
       <main className="max-w-7xl mx-auto py-16 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {candidates.map((candidate) => (
-            <div key={candidate.id} className="group bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col">
-              <div className="aspect-[4/3] bg-indigo-50 flex items-center justify-center overflow-hidden">
+            <div key={candidate.id} className="group bg-white rounded-[2rem] shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col">
+              <div className="aspect-video bg-brand-50 flex items-center justify-center overflow-hidden">
                 {candidate.image ? (
-                  <img src={candidate.image} alt={candidate.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <img src={candidate.image} alt={candidate.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 ) : (
-                  <div className="text-indigo-200">
-                    <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="text-brand-200">
+                    <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                     </svg>
                   </div>
                 )}
               </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <h2 className="text-2xl font-black mb-4 text-gray-900">{candidate.name}</h2>
-                <div className="mb-6 flex-1">
-                  <h3 className="text-sm font-bold text-indigo-600 uppercase tracking-widest mb-2">Vision</h3>
-                  <p className="text-gray-600 line-clamp-3 leading-relaxed">{candidate.vision}</p>
+              <div className="p-10 flex-1 flex flex-col">
+                <h2 className="text-4xl font-black mb-8 text-gray-900 tracking-tight">{candidate.name}</h2>
+                
+                <div className="space-y-8 mb-10 flex-1">
+                  <div>
+                    <h3 className="text-xs font-black text-brand-600 uppercase tracking-widest mb-3 flex items-center gap-2">
+                       <span className="w-8 h-px bg-brand-100"></span> 
+                       Vision
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed pl-10 border-l-2 border-brand-50 italic">{candidate.vision}</p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xs font-black text-brand-600 uppercase tracking-widest mb-3 flex items-center gap-2">
+                       <span className="w-8 h-px bg-brand-100"></span> 
+                       Mission
+                    </h3>
+                    <div className="text-gray-600 text-lg leading-relaxed pl-10 border-l-2 border-brand-50 whitespace-pre-line">
+                      {candidate.mission}
+                    </div>
+                  </div>
                 </div>
                 <button
                   onClick={() => openVoteModal(candidate)}
-                  className="w-full py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg hover:bg-indigo-700 active:scale-95 transition-all shadow-lg shadow-indigo-100"
+                  className="w-full py-4 bg-brand-600 text-white rounded-2xl font-bold text-lg hover:bg-brand-700 active:scale-95 transition-all shadow-lg shadow-brand-100"
                 >
                   Vote for {candidate.name.split(" ")[0]}
                 </button>
@@ -136,7 +152,7 @@ export default function VoterPage() {
               </div>
               
               <p className="text-gray-600 mb-8 text-lg">
-                You are about to vote for <span className="font-bold text-indigo-600">{selectedCandidate.name}</span>. 
+                You are about to vote for <span className="font-bold text-brand-600">{selectedCandidate.name}</span>. 
                 Please enter your Student ID (NIM) to verify.
               </p>
 
@@ -147,7 +163,7 @@ export default function VoterPage() {
                     type="text"
                     required
                     placeholder="e.g. 12345678"
-                    className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-indigo-600 focus:ring-0 transition-all font-mono text-xl"
+                    className="w-full px-5 py-4 bg-gray-50 border-2 border-gray-100 rounded-2xl focus:border-brand-600 focus:ring-0 transition-all font-mono text-xl"
                     value={nim}
                     onChange={(e) => setNim(e.target.value)}
                   />
@@ -155,7 +171,7 @@ export default function VoterPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-5 bg-indigo-600 text-white rounded-2xl font-black text-xl hover:bg-indigo-700 disabled:opacity-50 shadow-xl shadow-indigo-100 transition-all active:scale-[0.98]"
+                  className="w-full py-5 bg-brand-600 text-white rounded-2xl font-black text-xl hover:bg-brand-700 disabled:opacity-50 shadow-xl shadow-brand-100 transition-all active:scale-[0.98]"
                 >
                   {isSubmitting ? "Processing..." : "Submit My Vote"}
                 </button>
@@ -169,7 +185,7 @@ export default function VoterPage() {
       )}
 
       <footer className="py-12 border-t border-gray-100 text-center">
-        <p className="text-gray-400 font-medium">© 2024 Election Commission. All Rights Reserved.</p>
+        <p className="text-gray-400 font-medium">© 2025 LPM INDEX MEDIA. All Rights Reserved.</p>
       </footer>
     </div>
   );
