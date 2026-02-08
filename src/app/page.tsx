@@ -85,8 +85,8 @@ export default function VoterPage() {
             Choose your next leader. Your voice defines the future of our LPM INDEX MEDIA. 
             One vote per NIM.
           </p>
-          <p className="text-xl text-brand-100 max-w-2xl mx-auto">
-            <a href="https://drive.google.com/drive/folders/1hlvGuy57pBen42oqHx5mqtooN4M6c7Pw?usp=sharing" target="_blank">dokumentasi debat</a>
+          <p className="text-xl text-blue-500 max-w-2xl mx-auto italic">
+            <a href="https://drive.google.com/drive/folders/1hlvGuy57pBen42oqHx5mqtooN4M6c7Pw?usp=sharing" target="_blank">link dokumentasi debat</a>
           </p>
         </div>
       </header>
